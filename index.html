@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         .timer {
-            font-size: 100px;
+            font-size: 80px;
         }
     </style>
 </head>
 
 <body>
+    <audio id="myAudio">
+        <source src="assets/js-dom_assets_ticking-tok.mp3" type="audio/mpeg">
+    </audio>
     <center>
-        <section class ="timer">
-            <h1> <span id="mins"> 00 </span> m : <span id="secs"> 00 </span> s </h1>
-            <button onclick="doSomething()"> Start </button>
-            <button> Reset </button>
+        <section class="timer">
+
+            <h1> <span id="mins"> 00 </span> m : <span id="secs">00</span> s </h1>
+            <button onclick="startClock()"> Start </button>
+            <button onclick="stopClock()"> Reset </button>
         </section>
     </center>
 </body>
-   
 <script>
     let myInterval;
     function startClock() {
         let seconds = 0;
+        let minutes = 0;
         myInterval = setInterval(() => {
-            if(seconds == 59) {
-                document.getElementById("secs").innerText = "00"
+            document.getElementById("myAudio").play();
+            if (seconds == 59) {
+                document.getElementById("secs").innerText = "00";
+                document.getElementById("mins").innerText = ++minutes;
                 seconds = 0;
                 return;
             }
-            else if(seconds < 9) {
-                document.getElementById("secs").innertext = `0${seconds}`;
+            if (seconds < 9) {
+                document.getElementById("secs").innerText = `0${++seconds}`;
             } else {
-                document.getElementById("secs").innertext = ++seconds;
+                document.getElementById("secs").innerText = ++seconds;
             }
-        }, 1000);
+        }, 100);
     }
     function stopClock() {
         clearInterval(myInterval);
