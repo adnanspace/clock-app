@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    
+</body>
+<script>
+    // Create elements
+var div1 = document.createElement('div');
+var div2 = document.createElement('div');
+var div3 = document.createElement('div');
+var div4 = document.createElement('div');
+var div5 = document.createElement('div');
+var div6 = document.createElement('div');
+var div7 = document.createElement('div');
+
+// Add classes to elements
+div1.classList.add('div1');
+div2.classList.add('div2');
+div3.classList.add('div3');
+div4.classList.add('div4');
+div5.classList.add('div5');
+div6.classList.add('div6');
+div7.classList.add('div7');
+
+// Set styles for elements
+div1.style.width = '900px';
+div1.style.height = '555px';
+div1.style.backgroundColor = 'red';
+
+div2.style.width = '342px';
+div2.style.height = '555px';
+div2.style.backgroundColor = 'blue';
+
+div3.style.width = '342px';
+div3.style.height = '211px';
+div3.style.backgroundColor = 'green';
+
+div4.style.width = '130px';
+div4.style.height = '211px';
+div4.style.backgroundColor = 'yellow';
+
+div5.style.width = '130px';
+div5.style.height = '80px';
+div5.style.backgroundColor = 'orange';
+
+div6.style.width = '50px';
+div6.style.height = '80px';
+div6.style.backgroundColor = 'purple';
+
+div7.style.width = '50px';
+div7.style.height = '30px';
+div7.style.backgroundColor = 'pink';
+
+// Append elements to the document
+div6.appendChild(div7);
+div5.appendChild(div6);
+div4.appendChild(div5);
+div3.appendChild(div4);
+div2.appendChild(div3);
+div1.appendChild(div2);
+document.body.appendChild(div1);
+</script>
+</html>
